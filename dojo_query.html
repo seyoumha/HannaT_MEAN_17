@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script>
+    </script>
+  </head>
+  <body>
+    <div class = 'container'>
+      <button id = 'click-button'>Click</button>
+      <button id = 'hover-button'>Hover over</button>
+    </div>
+    <script>
+        (function(){
+          let DojoObj={
+            click: function(onClick){
+              document.getElementById('click-button').addEventListener('click', onClick);
+            },
+            hover: function(hoverIn, hoverOut){
+              document.getElementById('hover-button').addEventListener('mouseover', hoverIn);
+              document.getElementById('hover-button').addEventListener('mouseout', hoverOut);
+            }
+  
+          }
+          
+        let $Dojo=function $Dojo(btnId){
+          return DojoObj
+        }
+        window.$Dojo = $Dojo;
+        
+        })();
+        $Dojo("#click-button").click(function() { console.log("The button was clicked!") });
+        $Dojo("#hover-button").hover(function() { console.log("The button was hovered on!") });
+      </script>
+  </body>
+</html>

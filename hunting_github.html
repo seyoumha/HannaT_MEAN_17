@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $.get("https://api.github.com/users/seyoumha", displayName)
+      function displayName(data) {
+        $('#result').html(data.name)
+        console.log(data);
+      }
+    </script>
+  </head>
+  <body>
+    <button id='info'>Get info</button>
+    <div id='result'></div>
+  </body>
+</html>

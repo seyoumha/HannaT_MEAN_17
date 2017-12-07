@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title></title>
+    <script>
+        // Math 1
+    let zero_negativity = (array) => {
+        if(array.some(a => a<0) === true){
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    zero_negativity([1,2,3])
+   
+    // Math 2
+    let is_even =(num)=>{if(num%2 === 0){return true} else{return false}}
+    is_even(2)
+    
+    // Math 3
+    let how_many_even = (array) => { 
+        x = 0; 
+        for(let i = 0; i<array.length; i++){
+            if(is_even(array[i]) === true){
+                x += 1
+            }
+        }
+        return x
+    }
+    how_many_even([2,3,3,3])
+    
+    // Math 4
+    let create_dummy_array = (n) => {
+        a = [] 
+        for(let i = 0; i < n; i++){
+            a.push(Math.floor(Math.random() * 9))
+        }
+        return a
+    }
+    create_dummy_array(5)
+
+    // Math 5
+
+    let random_choice = (array) => {
+        x = Math.floor(Math.random() * array.length)
+        console.log(x)
+        console.log(array[x])
+    }
+    random_choice([2,3,4,5,6])
+    </script>
+  </head>
+  <body>
+      !!!
+  </body>
+</html>    

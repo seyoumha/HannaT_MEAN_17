@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title></title>
+    <script>
+    // Part I
+    let starString = (stars) =>{return ('*'.repeat(stars))}
+    starString();
+
+    // Part II
+    // let drawStars = (array) => {
+    //     for(let i = 0; i<array.length; i++){
+    //         return(starString(array[i]))
+    //     }
+    // }
+    // drawStars([2,3,4])
+
+    // Part III
+    let drawStars = (array) => {
+        console.log("array",array);
+        for(let i = 0; i < array.length; i++){
+
+            if(typeof array[i] === 'string'){
+                let str = ''
+                for(let z = 0; z < array[i].length; z++){
+                    str += ((array[i][0]).toLowerCase())
+                    
+                }
+                return str;
+            }
+            else{
+                return starString(array[i])
+            }
+        }
+        
+    }
+    drawStars( [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"])
+    </script>
+    
+  </head>
+  <body>
+      !
+  </body>
+</html>    
