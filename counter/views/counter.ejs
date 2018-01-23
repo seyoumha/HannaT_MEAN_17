@@ -1,0 +1,10 @@
+<div style='padding:270px; margin-left: 250px; '>
+    <h1>Counter</h1>
+    <%= session.num_views %> times<br/><br/>
+    <form action='/add_two' method='post'>
+        <input type='submit' value='+2'>
+    </form>
+    <form action='/reset' method='post'>
+        <input type='submit' value='Reset'>
+    </form>
+</div>

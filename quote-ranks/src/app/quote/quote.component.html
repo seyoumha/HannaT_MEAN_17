@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<div *ngFor="let q of allQuotes; let idx = index ">
+  <fieldset>
+    <div style='text-align: left'>
+      "{{q.quote}}"<br/>
+      -{{q.author}}
+    </div>
+    <div style='text-align: right'>
+      <span *ngIf='q.rating >0'>+</span>{{q.rating}}
+      <button (click)='vote(q.rating, 1, idx)'>Vote UP</button>
+      <button (click)='vote(q.rating, -1, idx)'>Vote Down</button>
+      <button (click)='destroy(idx)'>Delete</button>
+    </div>
+
+  </fieldset><br/>
+</div>

@@ -1,0 +1,25 @@
+  <h1>{{ title }}</h1>
+  <form #userForm='ngForm' (submit)='submitted()'>
+    <fieldset [ngClass]="{'info': msg}"><p >Thank you for registering with us Jade.  We just sent you a confirmation email at{{email.value}}, and we will send all mail to {{st.value}}, {{city.value}}, {{state.value}}.</p><p>Have a wonderful day!</p></fieldset>
+    <fieldset><h3>Account Information</h3>
+
+      *First name: <input type='text' name='firstName' required [(ngModel)]="user.firstName"  #firstName='ngModel'/> <span class='errors'*ngIf='firstName.errors'> First name is Required</span><br/>
+      *Last name: <input type='text' name='lasttName' required [(ngModel)]="user.lastName"  #lastName='ngModel'/><span class='errors' *ngIf='lastName.errors'> Last name is Required</span><br/>
+      *Email: <input type='text' name='email' required [(ngModel)]="user.email" email  #email='ngModel'/><span class='errors'*ngIf='!email.valid'> Email must be valid.</span><br/>
+      *Password: <input type='password' name='password' required minlength='16' [(ngModel)]="user.password"  #password='ngModel'/><span class='errors' *ngIf='password.errors'> Password must be at least 16 characters long</span><br/>
+      *Password Confirmation: <input type='password' name='confPass' required [(ngModel)]="user.confPass"  #confPass='ngModel'/><span class ='errors' *ngIf='password.value != confPass.value'>Password Confirmation mst match Password.</span><br/>
+      *Street Address: <input type='text' name='st' required [(ngModel)]="user.st"  #st='ngModel'/><span class='errors'*ngIf='st.errors'> Street Address is required.</span><br/>
+      *Unit/Apt#: <input type='text' name='apt' required [(ngModel)]="user.apt"  #apt='ngModel'/><br/>
+      *City: <input type='text' name='city' required [(ngModel)]="user.city"  #city='ngModel'/><span class='errors'*ngIf='city.errors'> City is required.</span><br/>
+      *State:<select name='state' [(ngModel)]="user.state"  #state='ngModel'>
+        <option selected value='MN' >MN</option>
+        <option value='MN'>GA</option>
+        <option value='MN'>Al</option>
+        <option value='MN'>TN</option>
+      </select><br/>
+      *I'm feeling lucky: <input type='radio' name='lucky' value='yes' [(ngModel)]="user.lucky" required #lucky="ngModel">Yes
+      <input type='radio' name='lucky' value='no' [(ngModel)]="user.lucky" required #lucky="ngModel"> N
+      <span class='errors'*ngIf='lucky.errors'> Choosing how you feel is required.</span><br/>
+    </fieldset>
+    <button [disabled]="!userForm.form.valid" type='submit' >Register </button>
+  </form>

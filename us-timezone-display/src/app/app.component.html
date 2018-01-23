@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>{{title}}</h1>
+    <div>
+      <button (click)="onButtonClick('pst')" [ngClass]="{active: lastTimeZoneSelected === 'pst'}" >PST</button>
+      <button (click)="onButtonClick('mst')" [ngClass]="{active: lastTimeZoneSelected === 'mst'}">MST</button>
+      <button (click)="onButtonClick('cst')" [ngClass]="{active: lastTimeZoneSelected === 'cst'}">CST</button>
+      <button (click)="onButtonClick('est')" [ngClass]="{active: lastTimeZoneSelected === 'est'}">EST</button>
+      <button (click)="onButtonClick()">Clear</button>
+      <h2>{{time| date:'medium'}}</h2>
+    </div>
+</div>
+

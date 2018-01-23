@@ -1,0 +1,5 @@
+<h1>Notes</h1>
+<div *ngFor="let note of notes">
+  <h5>{{ note.note }}</h5>
+  <p>Created on: {{ note.createdAt |date: 'medium' }}</p>
+</div>

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            var socket  = io.connect();
+            $(document).ready(function (){
+                socket.on('updatePage', function(data){
+                    info = "You emitted the following infromation to the server: {name: "+data.name+", location: "+data.loc+", language: "+data.lan+", comment: "+data.comment+"}<br/><br/> Your Lucky number emitted by the server is "+data.random_num+"<br/><br/>"
+                    document.getElementById('txt').innerHTML = info
+                    
+            })
+            $('#submit').click(function(e){
+                e.preventDefault();
+                var msg = {
+                    name:$('#name').val(),
+                    loc:$('#loc').val(),
+                    lan:$('#lan').val(),
+                    comment:$('#comment').val()
+                }
+                socket.emit("data", msg);
+            });
+            
+           })
+       </script>
+    </head>
+    <body>
+        <div id='txt'>
+        </div>
+        <form method='post' action=''>
+            Your name: 
+            <input type='text' id='name'name='name'><br/><br/>
+            Dojo Location:
+            <select name='loc' id='loc'>
+                <option value = 'Seattle, WA'>Seattle, WA</option>
+                <option value = 'Washington DC'>Washington DC</option>
+            </select><br/><br/>
+            Favoriate Language: 
+            <select name='lan' id='lan'>
+                <option value = 'Javascript'>Javascript</option>
+                <option value = 'Ruby'>Ruby</option>
+            </select><br/><br/>
+            Comment(optional):
+            <textarea id='comment' name='comment'></textarea><br/><br/>
+            <input type='submit' id='submit' value='Submit'>
+        </form>
+    
+    </body>
+</html>

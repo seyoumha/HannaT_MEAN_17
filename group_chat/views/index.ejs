@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            let socket = io.connect()
+            $(document).ready(function(){
+                let name = prompt("Your Name:")
+                $('#send').click(function(e){
+                    e.preventDefault();
+                    var msg = $('#msg').val();
+                    info={user: name, msg: msg}
+                    socket.emit('info', info)
+                })
+
+                socket.on('user', function(data){
+                    $('#users').append('<p>'+data.user+': '+data.msg+'</p>')
+                })
+                
+            })
+            
+        
+        </script>
+    </head>
+    <body>
+        <h2>Conversation Board</h2>
+        <div id='users'>
+
+        </div>
+        <form>
+            <input type='text' name='msg' id='msg'>
+            <input type='submit' value='send' id='send'>
+        </form>
+
+    </body>
+</html>

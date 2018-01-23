@@ -1,0 +1,10 @@
+.box{
+  height: 80px;
+  width: 80px;
+  border: 1px solid black
+}
+.boxes{
+  display: flex;
+  margin-left: 350px;
+  padding-top: 100px;
+}

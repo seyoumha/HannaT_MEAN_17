@@ -1,0 +1,14 @@
+<input #powerlevel type='number' name='number'step="1" min="1" max="100"/>
+<button (click)='calculatePowers(powerlevel.value)'>Calculate Powers</button>
+<table>
+  <tr>
+    <td><app-power-box [multiplier]='1' [power]='masterpower' title='HumanComponent'></app-power-box></td>
+    <td><app-power-box [multiplier]='10' [power]='masterpower' title='SayanComponent'></app-power-box></td>
+    <td><app-power-box [multiplier]='90' [power]='masterpower' title='SuperSayanComponent'></app-power-box></td>
+  </tr>
+  <tr>
+    <td><app-power-box [multiplier]='150' [power]='masterpower' title='SuperSayanTwoComponent'></app-power-box></td>
+    <td><app-power-box [multiplier]='250' [power]='masterpower' title='SuperSayanThreeComponent'></app-power-box></td>
+    <td><app-power-box [multiplier]='500' [power]='masterpower' title='SuperSayanFourComponent'></app-power-box></td>
+  </tr>
+</table>

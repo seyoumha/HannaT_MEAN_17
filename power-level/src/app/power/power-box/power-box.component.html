@@ -1,0 +1,7 @@
+<div style='border: 1px solid #999'>
+  <h5>{{title}}</h5>
+  <p>Power Level: {{power * multiplier}}</p>
+  <p *ngIf='power * multiplier > 9000 &&  power * multiplier < 20000'>Over 9000!</p>
+  <p *ngIf='power * multiplier > 20000 && power * multiplier < 50000'>Superlative!</p>
+  <p *ngIf='power * multiplier === 50000'>The One</p>
+</div>

@@ -1,0 +1,9 @@
+.btn{
+  display: flex;
+}
+.notActive{
+  background-color: red;
+}
+.active{
+  background-color: green;
+}

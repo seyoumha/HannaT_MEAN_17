@@ -1,0 +1,7 @@
+<div>
+  <form (submit)='onSubmit()'>
+    Note!!!:
+    <input type='text' name='note' required minlength = "3" [(ngModel)]= 'newNote.note' #note = 'ngModel'><span *ngIf = 'note.errors' style='color: red;'> Note should be at leaset 3 characters </span>
+    <input type='submit' value='addnote' style='background: green'>
+  </form>
+</div>

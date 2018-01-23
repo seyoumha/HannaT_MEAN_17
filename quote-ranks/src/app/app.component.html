@@ -1,0 +1,5 @@
+<h1>{{title}}</h1>
+<textarea rows="4" cols="50" required [(ngModel)] = 'q.quote' #quote = 'ngModel'></textarea><span style='color: red; margin-left: 20px;'*ngIf= 'quote.errors'>Quote is required</span><br/>
+Author: <input type='text' name='author' required [(ngModel)] = 'q.author' #author='ngModel'><span style='color: red; margin-left: 20px;'*ngIf= 'author.errors'>Author is required</span><br/><br/>
+<button (click)='addQuote()'>Add Quote</button>
+<app-quote [allQuotes]='sortedQuotes()' (voteClick) = "changeRating($event)" (removeQuote) = 'destroy($event, idx)'></app-quote>

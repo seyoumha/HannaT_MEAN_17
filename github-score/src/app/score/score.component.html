@@ -1,0 +1,6 @@
+<h2>{{title}}</h2>
+Github Username:
+  <input type='text' name='user-name' #user_name required><br/><br/>
+  <button (click)= 'getData(user_name.value)'>Calculate my GitHub Score</button><br/><br/>
+  <h2 *ngIf = 'userScore'>Your Score: {{userScore}}</h2>
+  <h3 *ngIf = 'msg' [ngStyle]="{'color': msg.color}">{{msg.text}}</h3>

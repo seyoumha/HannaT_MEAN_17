@@ -1,0 +1,8 @@
+<h1>Submitted Information</h1>
+<% for(var i in user) {%>
+Name: <%= user[i].name%><br/><br/>
+Dojo Location: <%= user[i].loc%><br/><br/>
+Favoriate Language: <%= user[i].lan%><br/><br/>
+Comment: <%= user[i].comment%><br/><br/>
+<% } %>
+<button><a href='/'>Back</a></button>

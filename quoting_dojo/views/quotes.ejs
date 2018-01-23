@@ -1,0 +1,8 @@
+<h1>Here are the awesome quotes!</h1>
+<%for(const quote in quotes){%>
+    "<%= quotes[quote].quote%>"<br/>
+    -<%= quotes[quote].name%> at <%= quotes[quote].created_at%><br/>
+    <hr/>
+    <%}%>
+    
+    

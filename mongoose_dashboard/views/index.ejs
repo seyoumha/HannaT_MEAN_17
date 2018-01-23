@@ -1,0 +1,10 @@
+<h1>Animals</h1>
+<%for(const animal in animals){%>
+    <a href='/animals/<%=animals[animal].id%>'><%= animals[animal].name%></a> &nbsp&nbsp 
+    <a href='/animals/edit/<%=animals[animal].id%>'>edit</a>
+    <form action='/animals/destroy/<%=animals[animal].id%>' method='post'>
+        <input type='submit' value='Delete'>   
+    </form>
+    <br/>
+    <hr/>
+<%}%>
